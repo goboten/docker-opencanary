@@ -3,10 +3,10 @@ opencanary(honeypot) Dockerfile
 
 ハニーポットであるopencanaryをDockerで動かすためのファイルです。  
 ファイル共有のsambaも動いているので事前に準備が必要です。  
-$ sudo mkdir -p /smb/home
-$ sudo touch /smb/home/password.txt
-$ sudo vi /smb/home/password.txt 
-※ 作成したpassword.txtに何か文字を入れて1バイト以上のファイルにしてください。
+$ sudo mkdir -p /smb/home  
+$ sudo touch /smb/home/password.txt  
+$ sudo vi /smb/home/password.txt   
+※ 作成したpassword.txtに何か文字を入れて1バイト以上のファイルにしてください。  
 
 また、重要な設定として詳細な設定方法は書きませんがsshのポートもハニーポットとして動かすため、sshの待ち受けポートを22から適当な番号(2222など)に変更してください。  
 opencanaryはjson形式で通信することができるため、fluentをポート1514で待ち受ければデータの受信が可能なので、そのままelasticsearchに流し込めば便利だと思います。
