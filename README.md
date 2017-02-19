@@ -19,4 +19,4 @@ $ sudo docker build -t opencanary ./
 dockerを実行するときにopencanary では、fluentなどにデータを飛ばすために「-e DEST_IP="host_ipaddress"」の指定が必要です。
 例えば 10.1.1.1 な感じです。  
 
-$ sudo docker run --name opencanary --cap-add=NET_BIND_SERVICE -d -p 21:21 -p 22:22 -p 23:23 -p 69:69 -p 80:80 -p 139:139 -p 445:445 -p 1433:1433 -p 3306:3306 -p 3389:3389 -p 5060:5060/UDP -p 5900:5900 -v /smb/home/:/smb/home/ -e DEST_IP="10.0.0.11" opencanary
+$ sudo docker run --name opencanary --cap-add=NET_BIND_SERVICE -d -p 21:21 -p 22:22 -p 23:23 -p 69:69 -p 80:80 -p 139:139 -p 445:445 -p 1433:1433 -p 3306:3306 -p 3389:3389 -p 5060:5060/UDP -p 5900:5900 -v /smb/home/:/smb/home/ -e DEST_IP="10.1.1.1" opencanary
